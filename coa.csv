@@ -1,0 +1,104 @@
+account_id,company_id,account_code,account_name,account_group,account_suspended,account_default_status,account_status,account_type_id,created_id,updated_id
+1,1,100,ASET,100,0,0,0,0,55,55
+2,1,101,ASET LANCAR,101,0,0,0,0,55,55
+3,1,101.00.1,Kas Besar,101,0,0,0,0,55,55
+4,1,101.00.2,Kas Kecil,101,0,0,0,0,55,55
+5,1,101.01,KAS DI BANK,101,0,0,0,0,55,55
+6,1,101.01.1,Bank Jateng/2-002-23282-3 K,101.01,0,0,0,0,55,55
+7,1,101.02,PINJAMAN YANG DIBERIKAN,101,0,0,0,0,55,55
+8,1,101.02.1,Pinjaman Kavling,101.02,0,0,0,0,55,55
+9,1,101.02.2,Pinjaman USP,101.02,0,0,0,0,55,55
+10,1,101.02.3,Pinjaman Pulsa,101.02,0,0,0,0,55,55
+11,1,101.02.4,Pinjaman Lain-lain/RSKI,101.02,0,0,0,0,55,55
+12,1,102,ASET TETAP,102,0,0,0,0,55,55
+13,1,102.01,Akumulasi Penyusutan,102,0,0,0,0,55,55
+14,1,103,ASET LAINYA,103,0,0,0,0,55,55
+15,1,103.01,Biaya Di Bayar Di Muka,103,0,0,0,0,55,55
+16,1,103.02,Pendapatan Yang Akan Diterima,103,0,0,0,0,55,55
+17,1,103.03,Persedian Barang,103,0,0,0,0,55,55
+18,1,200,KEWAJIBAN,200,0,1,1,1,55,55
+19,1,200.01,KEWAJIBAN LANCAR,200,0,1,1,1,55,55
+20,1,200.01.1,Deposito,200.01,0,1,1,1,55,55
+21,1,200.02,KEWAJIBAN JANGKA PANJANG,200,0,1,1,1,55,55
+22,1,200.02.1,Hutang Dagang,200.02,0,1,1,1,55,55
+23,1,200.02.2,Hutang JMA,200.02,0,1,1,1,55,55
+24,1,200.02.3,Hutang Pajak,200.02,0,1,1,1,55,55
+25,1,200.02.4,Hutang Lain-lain/USP,200.02,0,1,1,1,55,55
+26,1,200.02.5,Hutang Lain-lain/Kavling,200.02,0,1,1,1,55,55
+27,1,201,MODAL/EKUITAS,201,0,1,1,1,55,55
+28,1,201.01,Cadangan,201,0,1,1,1,55,55
+29,1,201.02,SHU Tahun Berjalan,201,0,1,1,1,55,55
+30,1,300.01,PENDAPATAN,300.01,0,1,1,2,55,55
+31,1,300.01.1,Penjualan,300.01,0,1,1,2,55,55
+32,1,300.02,PENDAPATAN LAIN,300.02,0,1,1,2,55,55
+33,1,300.02.1,Partisipasi Pinjaman Lain,300.02,0,1,1,2,55,55
+34,1,300.02.2,Foto Copy,300.02,0,1,1,2,55,55
+35,1,300.02.3,Paket,300.02,0,1,1,2,55,55
+36,1,300.02.4,Pulsa,300.02,0,1,1,2,55,55
+37,1,300.02.5,Outsourcing,300.02,0,1,1,2,55,55
+38,1,300.02.6,Seragam,300.02,0,1,1,2,55,55
+39,1,300.02.7,Kavling,300.02,0,1,1,2,55,55
+40,1,300.02.8,Parkir,300.02,0,1,1,2,55,55
+41,1,300.02.9,Parcel,300.02,0,1,1,2,55,55
+42,1,300.02.10,Pendapatan Lainya,300.02,0,1,1,2,55,55
+43,1,400.01,BEBAN OPERASIONAL,400.01,0,0,0,3,55,55
+44,1,400.01.1,Biaya Karyawan,400.01,0,0,0,3,55,55
+45,1,400.01.2,Makan,400.01,0,0,0,3,55,55
+46,1,400.01.3,Cetakan & Alat Adm,400.01,0,0,0,3,55,55
+47,1,400.01.4,Kebersihan,400.01,0,0,0,3,55,55
+48,1,400.01.5,Bahan Habis Pakai,400.01,0,0,0,3,55,55
+49,1,400.01.6,Pemeliharaan Inventaris,400.01,0,0,0,3,55,55
+50,1,400.01.7,Pemeliharaan Kendaraan,400.01,0,0,0,3,55,55
+51,1,400.01.8,Seragam Kary Kopkar,400.01,0,0,0,3,55,55
+52,1,400.01.9,Komputerisasi,400.01,0,0,0,3,55,55
+53,1,400.01.10,Pajak,400.01,0,0,0,3,55,55
+54,1,400.01.11,Perjalanan,400.01,0,0,0,3,55,55
+55,1,400.01.12,Pihak Ketiga,400.01,0,0,0,3,55,55
+56,1,400.01.13,Telpon,400.01,0,0,0,3,55,55
+57,1,400.01.14,Perlengkapan,400.01,0,0,0,3,55,55
+58,1,400.01.15,Biaya Penyusutan,400.01,0,0,0,3,55,55
+59,1,400.02,BEBAN NON OPERASIONAL,400.02,0,0,0,3,55,55
+60,1,400.02.1,Pendapatan Bunga Deposito,400.02,0,0,0,3,55,55
+61,1,400.02.2,Pendapatan Bunga Tabungan,400.02,0,0,0,3,55,55
+62,1,400.02.3,Biaya Adm Bank,400.02,0,0,0,3,55,55
+63,1,400.03,HARGA POKOK PENJUALAN,400.03,0,0,0,3,55,55
+64,1,400.03.1,Pembelian,400.03,0,0,0,3,55,55
+65,1,400.03.2,HPP Outsourcing,400.03,0,0,0,3,55,55
+66,1,400.03.3,HPP Seragam,400.03,0,0,0,3,55,55
+67,1,400.03.4,HPP Parcel,400.03,0,0,0,3,55,55
+68,1,400.03.5,Potongan Pembelian,400.03,0,0,0,3,55,55
+69,1,400.03.6,Retur Pembelian,400.03,0,0,0,3,55,55
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,100,ASET,100,,,,,,
+,,101.00,ASET LANCAR,101,,,,,,
+,,101.00.1,Kas Besar,101.00,,,,,,
+,,101.00.2,Kas Kecil,101.00,,,,,,
+,,101.01,KAS DI BANK,101,,,,,,
+,,101.01.1,Bank Jateng/2-002-23282-3 K,101.01,,,,,,
+,,101.02,PINJAMAN YANG DIBERIKAN,101,,,,,,
+,,101.02.1,Pinjaman,101.02,,,,,,
+,,101.02.2,Pinjaman Kavling,101.02,,,,,,
+,,101.02.3,Pinjaman USP,101.02,,,,,,
+,,101.02.4,Pinjaman Pulsa,101.02,,,,,,
+,,101.02.5,Pinjaman Lain-lain/RSKI,101.02,,,,,,
+,,102.00,ASET TETAP,102,,,,,,
+,,102.01,Aset Tetap,102,,,,,,
+,,102.02,Akumulasi Penyusutan,102,,,,,,
+,,103.00,ASET LAINYA,103,,,,,,
+,,103.01,Persediaan Barang,103,,,,,,
+,,103.02,Biaya Dibayar Dimuka,103,,,,,,
+,,103.03,Pendapatan Yang Akan Diterima,103,,,,,,
+,,200,KEWAJIBAN,200,,,,,,
+,,200.01,KEWAJIBAN LANCAR,200,,,,,,
+,,200.01.1,Deposito,200.01,,,,,,
+,,200.02,KEWAJIBAN JANGKA PANJANG,200,,,,,,
+,,200.02.1,Hutang Dagang,200.02,,,,,,
+,,200.02.2,Hutang JMA,200.02,,,,,,
+,,200.02.3,Hutang Pajak,200.02,,,,,,
+,,200.02.4,Hutang Lain-lain/USP,200.02,,,,,,
+,,200.02.5,Hutang Lain-lain/Kavling,200.02,,,,,,
+,,201.00,MODAL/EKUITAS,201,,,,,,
+,,201.01,Cadangan,201,,,,,,
+,,201.02,SHU Tahun Berjalan,201,,,,,,
