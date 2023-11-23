@@ -756,31 +756,31 @@ class SalesInvoiceController extends Controller
 
 
                 //ppn Non bkp Kredit
-                $account_setting_name = 'sales_tax_out_account';
-                $account_id = $this->getAccountId($account_setting_name);
-                $account_setting_status = $this->getAccountSettingStatus($account_setting_name);
-                $account_default_status = $this->getAccountDefaultStatus($account_id);
-                $journal_voucher_id = JournalVoucher::orderBy('created_at', 'DESC')->where('company_id', Auth::user()->company_id)->first();
-                if ($account_setting_status == 0) {
-                    $debit_amount = $ppnAmount['total_tax_amount'];
-                    $credit_amount = 0;
-                } else {
-                    $debit_amount = 0;
-                    $credit_amount = $ppnAmount['total_tax_amount'];
-                }
-                $journal_credit_ppn = array(
-                    'company_id'                    => Auth::user()->company_id,
-                    'journal_voucher_id'            => $journal_voucher_id['journal_voucher_id'],
-                    'account_id'                    => $account_id,
-                    'journal_voucher_amount'        => $ppnAmount['total_tax_amount'],
-                    'account_id_default_status'     => $account_default_status,
-                    'account_id_status'             => $account_setting_status,
-                    'journal_voucher_debit_amount'  => $debit_amount,
-                    'journal_voucher_credit_amount' => $credit_amount,
-                    'updated_id'                    => Auth::id(),
-                    'created_id'                    => Auth::id()
-                );
-                JournalVoucherItem::create($journal_credit_ppn);
+                // $account_setting_name = 'sales_tax_out_account';
+                // $account_id = $this->getAccountId($account_setting_name);
+                // $account_setting_status = $this->getAccountSettingStatus($account_setting_name);
+                // $account_default_status = $this->getAccountDefaultStatus($account_id);
+                // $journal_voucher_id = JournalVoucher::orderBy('created_at', 'DESC')->where('company_id', Auth::user()->company_id)->first();
+                // if ($account_setting_status == 0) {
+                //     $debit_amount = $ppnAmount['total_tax_amount'];
+                //     $credit_amount = 0;
+                // } else {
+                //     $debit_amount = 0;
+                //     $credit_amount = $ppnAmount['total_tax_amount'];
+                // }
+                // $journal_credit_ppn = array(
+                //     'company_id'                    => Auth::user()->company_id,
+                //     'journal_voucher_id'            => $journal_voucher_id['journal_voucher_id'],
+                //     'account_id'                    => $account_id,
+                //     'journal_voucher_amount'        => $ppnAmount['total_tax_amount'],
+                //     'account_id_default_status'     => $account_default_status,
+                //     'account_id_status'             => $account_setting_status,
+                //     'journal_voucher_debit_amount'  => $debit_amount,
+                //     'journal_voucher_credit_amount' => $credit_amount,
+                //     'updated_id'                    => Auth::id(),
+                //     'created_id'                    => Auth::id()
+                // );
+                // JournalVoucherItem::create($journal_credit_ppn);
 
                 //beban pokok penjualan Non BKP Kredit
                 $account_setting_name = 'sales_cash_receivable_non_bkp_account';
