@@ -692,18 +692,7 @@ var ppn = {{ $ppn['ppn_percentage'] }};
         $('#voucher_id').select2('val','0');
     });
     
-    $('#customer_id_view').change(function(){
-        var customer_id = $('#customer_id_view').val();
-        var sales_payment_method = $('#sales_payment_method').val();
-        if ((customer_id != null) && (sales_payment_method == 1)) {
-            $('#customer_id').val(customer_id);
-            $('#label_voucher').removeClass('d-none');
-        } else {
-            $('#customer_id').val(customer_id);
-            $('#label_voucher').addClass('d-none');
-            $('#voucher_id').select2('val','0');
-        }
-    });
+                                          
 
     $('#sales_payment_method').change(function(){
         var customer_id = $('#customer_id_view').val();
