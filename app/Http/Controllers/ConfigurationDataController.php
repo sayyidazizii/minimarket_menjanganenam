@@ -44,7 +44,7 @@ class ConfigurationDataController extends Controller
     public function checkDataConfiguration()
     {
         $item_stock = curl_init();
-        curl_setopt($item_stock, CURLOPT_URL,'http://127.0.0.1:8080/api/get-data-item-stock');
+        curl_setopt($item_stock, CURLOPT_URL,'https://ciptapro.com/minimarket_menjanganenam/api/get-data-item-stock');
         curl_setopt($item_stock, CURLOPT_RETURNTRANSFER, true);
         $response_item_stock = curl_exec($item_stock);
         $result_item_stock = json_decode($response_item_stock,TRUE);
@@ -68,7 +68,7 @@ class ConfigurationDataController extends Controller
     {
         set_time_limit(3000);
         $item_category = curl_init();
-        curl_setopt($item_category, CURLOPT_URL,'http://127.0.0.1:8080/api/get-data-item-category');
+        curl_setopt($item_category, CURLOPT_URL,'https://ciptapro.com/minimarket_menjanganenam/api/get-data-item-category');
         curl_setopt($item_category, CURLOPT_RETURNTRANSFER, true);
         $response_item_category = curl_exec($item_category);
         $result_item_category = json_decode($response_item_category,TRUE);
@@ -83,7 +83,7 @@ class ConfigurationDataController extends Controller
         }
         
         $item_unit = curl_init();
-        curl_setopt($item_unit, CURLOPT_URL,'http://127.0.0.1:8080/api/get-data-item-unit');
+        curl_setopt($item_unit, CURLOPT_URL,'https://ciptapro.com/minimarket_menjanganenam/api/get-data-item-unit');
         curl_setopt($item_unit, CURLOPT_RETURNTRANSFER, true);
         $response_item_unit = curl_exec($item_unit);
         $result_item_unit = json_decode($response_item_unit,TRUE);
@@ -98,7 +98,7 @@ class ConfigurationDataController extends Controller
         }
 
         $item_barcode = curl_init();
-        curl_setopt($item_barcode, CURLOPT_URL,'http://127.0.0.1:8080/api/get-data-item-barcode');
+        curl_setopt($item_barcode, CURLOPT_URL,'https://ciptapro.com/minimarket_menjanganenam/api/get-data-item-barcode');
         curl_setopt($item_barcode, CURLOPT_RETURNTRANSFER, true);
         $response_item_barcode = curl_exec($item_barcode);
         $result_item_barcode = json_decode($response_item_barcode,TRUE);
@@ -113,7 +113,7 @@ class ConfigurationDataController extends Controller
         }
 
         $item_packge = curl_init();
-        curl_setopt($item_packge, CURLOPT_URL,'http://127.0.0.1:8080/api/get-data-item-packge');
+        curl_setopt($item_packge, CURLOPT_URL,'https://ciptapro.com/minimarket_menjanganenam/api/get-data-item-packge');
         curl_setopt($item_packge, CURLOPT_RETURNTRANSFER, true);
         $response_item_packge = curl_exec($item_packge);
         $result_item_packge = json_decode($response_item_packge,TRUE);
@@ -128,7 +128,7 @@ class ConfigurationDataController extends Controller
         }
         
         $item_warehouse = curl_init();
-        curl_setopt($item_warehouse, CURLOPT_URL,'http://127.0.0.1:8080/api/get-data-item-warehouse');
+        curl_setopt($item_warehouse, CURLOPT_URL,'https://ciptapro.com/minimarket_menjanganenam/api/get-data-item-warehouse');
         curl_setopt($item_warehouse, CURLOPT_RETURNTRANSFER, true);
         $response_item_warehouse = curl_exec($item_warehouse);
         $result_item_warehouse = json_decode($response_item_warehouse,TRUE);
@@ -143,7 +143,7 @@ class ConfigurationDataController extends Controller
         }
 
         $item = curl_init();
-        curl_setopt($item, CURLOPT_URL,'http://127.0.0.1:8080/api/get-data-item');
+        curl_setopt($item, CURLOPT_URL,'https://ciptapro.com/minimarket_menjanganenam/api/get-data-item');
         curl_setopt($item, CURLOPT_RETURNTRANSFER, true);
         $response_item = curl_exec($item);
         $result_item = json_decode($response_item,TRUE);
@@ -158,7 +158,7 @@ class ConfigurationDataController extends Controller
         }
 
         $item_stock = curl_init();
-        curl_setopt($item_stock, CURLOPT_URL,'http://127.0.0.1:8080/api/get-data-item-stock');
+        curl_setopt($item_stock, CURLOPT_URL,'https://ciptapro.com/minimarket_menjanganenam/api/get-data-item-stock');
         curl_setopt($item_stock, CURLOPT_RETURNTRANSFER, true);
         $response_item_stock = curl_exec($item_stock);
         $result_item_stock = json_decode($response_item_stock,TRUE);
@@ -172,7 +172,7 @@ class ConfigurationDataController extends Controller
         }
 
         $item_rack = curl_init();
-        curl_setopt($item_rack, CURLOPT_URL,'http://127.0.0.1:8080/api/get-data-item-rack');
+        curl_setopt($item_rack, CURLOPT_URL,'https://ciptapro.com/minimarket_menjanganenam/api/get-data-item-rack');
         curl_setopt($item_rack, CURLOPT_RETURNTRANSFER, true);
         $response_item_rack = curl_exec($item_rack);
         $result_item_rack = json_decode($response_item_rack,TRUE);
@@ -186,7 +186,7 @@ class ConfigurationDataController extends Controller
         }
 
         $core_member = curl_init();
-        curl_setopt($core_member, CURLOPT_URL,'http://127.0.0.1:8080/api/get-data-core-employee');
+        curl_setopt($core_member, CURLOPT_URL,'https://ciptapro.com/minimarket_menjanganenam/api/get-data-core-employee');
         curl_setopt($core_member, CURLOPT_RETURNTRANSFER, true);
         $response_core_member = curl_exec($core_member);
         $result_core_member = json_decode($response_core_member,TRUE);
@@ -200,7 +200,7 @@ class ConfigurationDataController extends Controller
         // }
 
         $preference_voucher = curl_init();
-        curl_setopt($preference_voucher, CURLOPT_URL,'http://127.0.0.1:8080/api/get-data-preference-voucher');
+        curl_setopt($preference_voucher, CURLOPT_URL,'https://ciptapro.com/minimarket_menjanganenam/api/get-data-preference-voucher');
         curl_setopt($preference_voucher, CURLOPT_RETURNTRANSFER, true);
         $response_preference_voucher = curl_exec($preference_voucher);
         $result_preference_voucher = json_decode($response_preference_voucher,TRUE);
@@ -258,7 +258,7 @@ class ConfigurationDataController extends Controller
          where('status_upload', 0)
         ->get();
         
-        $response = Http::post(env('API_URL','http://127.0.0.1:8080').'/api/post-data', [
+        $response = Http::post(env('API_URL','https://ciptapro.com/minimarket_menjanganenam').'/api/post-data', [
             'sales'         => json_decode($sales, true),
             'salesItem'     => json_decode($salesItem, true),
             // 'member'        => json_decode($member, true),
