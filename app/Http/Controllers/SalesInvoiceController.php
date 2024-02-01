@@ -1731,7 +1731,7 @@ class SalesInvoiceController extends Controller
             ->where('company_id', Auth::user()->company_id)
             ->where('sales_invoice_id', $sales_invoice_id)
             ->first();
-        //dd($sales_invoice);
+        // dd($sales_invoice);
 
         $sales_invoice_item = SalesInvoiceItem::where('sales_invoice_id', $sales_invoice_id)
             ->get();
@@ -1765,7 +1765,7 @@ class SalesInvoiceController extends Controller
 
             $pdf::SetFont('helvetica', 'B', 20);
 
-            $pdf::AddPage();
+            $pdf::AddPage('P',400,500);
 
             $pdf::SetFont('helvetica', '', 8);
             $tbl = "";
@@ -2113,17 +2113,17 @@ class SalesInvoiceController extends Controller
                 $pdf::setLanguageArray($l);
             }
 
-            $pdf::AddPage('P', array(75, 3276));
+            $pdf::AddPage('P', array(110, 3276));
 
             $pdf::SetFont('helvetica', '', 10);
 
             $tbl = "
-            <table style=\" font-size:9px; \">
+            <table style=\" font-size:10px; \">
                 <tr>
                     <td style=\"text-align: center; font-size:12px; font-weight: bold\">" . $data_company['company_name'] . "</td>
                 </tr>
                 <tr>
-                    <td style=\"text-align: center; font-size:9px;\">" . $data_company['company_address'] . "</td>
+                    <td style=\"text-align: center; font-size:10px;\">" . $data_company['company_address'] . "</td>
                 </tr>
             </table>
            
@@ -2131,8 +2131,7 @@ class SalesInvoiceController extends Controller
             $pdf::writeHTML($tbl, true, false, false, false, '');
             $kasir = ucfirst(Auth::user()->name);
             $tblStock1 = "
-            <div>-------------------------------------------------------</div>
-            <table style=\" font-size:9px; \" >
+            <table style=\" font-size:10px; \" >
                 <tr>
                     <td style=\"text-align: center; \" width=\" 100% \">" . $this->getCustomerName($sales_invoice['customer_id']) . "(" . $this->getCustomerNo($sales_invoice['customer_id']) . ")/" . $this->getCustomerDiv($sales_invoice['customer_id']) . "</td>
                 </tr>
@@ -2140,11 +2139,10 @@ class SalesInvoiceController extends Controller
                     <td style=\"text-align: center; \" width=\" 100% \">#" . $kasir . "/" . date('d-m-Y', strtotime($sales_invoice['created_at'])) . "&nbsp;&nbsp;&nbsp;" . date('H:i', strtotime($sales_invoice['created_at'])) . "/" . $sales_invoice['sales_invoice_no'] . "#</td>
                 </tr>
             </table>
-            <div>-------------------------------------------------------</div>
             ";
 
             $tblStock2 = "
-            <table style=\" font-size:9px; \" width=\" 100% \" border=\"0\">
+            <table style=\" font-size:10px; \" width=\" 100% \" border=\"0\">
             ";
 
             $tblStock3 = "";
@@ -2153,11 +2151,11 @@ class SalesInvoiceController extends Controller
             foreach ($sales_invoice_item as $key => $val) {
                 $tblStock3 .= "
                     <tr>
-                        <td width=\" 10% \" style=\"text-align: left; \">" . $no . "</td>
-                        <td width=\" 15% \" style=\"text-align: left; \">" . $this->getbarcode($val['item_id']) . "</td>
-                        <td width=\" 25% \" style=\"text-align: left; \">" . $this->getItemName($val['item_id']) . "</td>
-                        <td width=\" 15% \" style=\"text-align: left; \">" . number_format($val['item_unit_price']) . "</td>
-                        <td width=\" 20% \" style=\"text-align: left; \">" . $val['quantity'] . "&nbsp;" . $this->getItemUnitName($val['item_unit_id']) . "</td>
+                        <td width=\" 5% \" style=\"text-align: left; \">" . $no . "</td>
+                        <td width=\" 20% \" style=\"text-align: left; \">" . $this->getbarcode($val['item_id']) . "</td>
+                        <td width=\" 40% \" style=\"text-align: left; \">" . $this->getItemName($val['item_id']) . "</td>
+                        <td width=\" 10% \" style=\"text-align: left; \">" . number_format($val['item_unit_price']) . "</td>
+                        <td width=\" 15% \" style=\"text-align: left; \">" . $val['quantity'] . "&nbsp;" . $this->getItemUnitName($val['item_unit_id']) . "</td>
                         <td width=\" 15% \" style=\"text-align: left; \">" . number_format($val['subtotal_amount_after_discount']) . "</td>
                     </tr>
                 ";
@@ -2165,8 +2163,7 @@ class SalesInvoiceController extends Controller
 
             $tblStock4 = "
             </table>
-            <div>-------------------------------------------------------</div>
-            <table style=\" font-size:9px; \" width=\" 100% \" border=\"0\">
+            <table style=\" font-size:10px; \" width=\" 100% \" border=\"0\">
             <tr>
                 <td width=\" 35% \" style=\"text-align: left; font-weight:bold;\">" . $items . " Items</td>
                 <td width=\" 50% \" style=\"text-align: right; font-weight:bold;\">Total : " . number_format($sales_invoice['subtotal_amount']) . "</td>
@@ -2243,7 +2240,7 @@ class SalesInvoiceController extends Controller
                 <td width=\"25% \" style=\"text-align: left; \"></td>
                 <td width=\"5% \" style=\"text-align: left; \"></td>
                 <td width=\"20% \" style=\"text-align: left; \"></td>
-                <td width=\"50% \" style=\"text-align: right; \">Semarang" . date('d-m-Y', strtotime($sales_invoice['created_at'])) . "</td>
+                <td width=\"50% \" style=\"text-align: right; \">Semarang ," . date('d-m-Y', strtotime($sales_invoice['created_at'])) . "</td>
                 </tr>
                 ";
             }
@@ -2277,8 +2274,8 @@ class SalesInvoiceController extends Controller
 
             $tblStock5 = "
             </table>
-            <div>-------------------------------------------------------</div>
-            <table style=\" font-size:9px; \" width=\" 100% \" border=\"0\">
+            
+            <table style=\" font-size:10px; \" width=\" 100% \" border=\"0\">
                 <tr>
                     <td width=\" 100% \" style=\"text-align: center;\">Terima Kasih</td>
                 </tr>
@@ -2685,17 +2682,17 @@ class SalesInvoiceController extends Controller
                 $pdf::setLanguageArray($l);
             }
 
-            $pdf::AddPage('P', array(75, 3276));
+            $pdf::AddPage('P', array(110, 3276));
 
             $pdf::SetFont('helvetica', '', 10);
 
             $tbl = "
-            <table style=\" font-size:9px; \">
+            <table style=\" font-size:10px; \">
                 <tr>
                     <td style=\"text-align: center; font-size:12px; font-weight: bold\">" . $data_company['company_name'] . "</td>
                 </tr>
                 <tr>
-                    <td style=\"text-align: center; font-size:9px;\">" . $data_company['company_address'] . "</td>
+                    <td style=\"text-align: center; font-size:10px;\">" . $data_company['company_address'] . "</td>
                 </tr>
             </table>
            
@@ -2703,8 +2700,7 @@ class SalesInvoiceController extends Controller
             $pdf::writeHTML($tbl, true, false, false, false, '');
             $kasir = ucfirst(Auth::user()->name);
             $tblStock1 = "
-            <div>-------------------------------------------------------</div>
-            <table style=\" font-size:9px; \" >
+            <table style=\" font-size:10px; \" >
                 <tr>
                     <td style=\"text-align: center; \" width=\" 100% \">" . $this->getCustomerName($sales_invoice['customer_id']) . "(" . $this->getCustomerNo($sales_invoice['customer_id']) . ")/" . $this->getCustomerDiv($sales_invoice['customer_id']) . "</td>
                 </tr>
@@ -2712,11 +2708,10 @@ class SalesInvoiceController extends Controller
                     <td style=\"text-align: center; \" width=\" 100% \">#" . $kasir . "/" . date('d-m-Y', strtotime($sales_invoice['created_at'])) . "&nbsp;&nbsp;&nbsp;" . date('H:i', strtotime($sales_invoice['created_at'])) . "/" . $sales_invoice['sales_invoice_no'] . "#</td>
                 </tr>
             </table>
-            <div>-------------------------------------------------------</div>
             ";
 
             $tblStock2 = "
-            <table style=\" font-size:9px; \" width=\" 100% \" border=\"0\">
+            <table style=\" font-size:10px; \" width=\" 100% \" border=\"0\">
             ";
 
             $tblStock3 = "";
@@ -2725,11 +2720,11 @@ class SalesInvoiceController extends Controller
             foreach ($sales_invoice_item as $key => $val) {
                 $tblStock3 .= "
                     <tr>
-                        <td width=\" 10% \" style=\"text-align: left; \">" . $no . "</td>
-                        <td width=\" 15% \" style=\"text-align: left; \">" . $this->getbarcode($val['item_id']) . "</td>
-                        <td width=\" 25% \" style=\"text-align: left; \">" . $this->getItemName($val['item_id']) . "</td>
-                        <td width=\" 15% \" style=\"text-align: left; \">" . number_format($val['item_unit_price']) . "</td>
-                        <td width=\" 20% \" style=\"text-align: left; \">" . $val['quantity'] . "&nbsp;" . $this->getItemUnitName($val['item_unit_id']) . "</td>
+                        <td width=\" 5% \" style=\"text-align: left; \">" . $no . "</td>
+                        <td width=\" 20% \" style=\"text-align: left; \">" . $this->getbarcode($val['item_id']) . "</td>
+                        <td width=\" 40% \" style=\"text-align: left; \">" . $this->getItemName($val['item_id']) . "</td>
+                        <td width=\" 10% \" style=\"text-align: left; \">" . number_format($val['item_unit_price']) . "</td>
+                        <td width=\" 15% \" style=\"text-align: left; \">" . $val['quantity'] . "&nbsp;" . $this->getItemUnitName($val['item_unit_id']) . "</td>
                         <td width=\" 15% \" style=\"text-align: left; \">" . number_format($val['subtotal_amount_after_discount']) . "</td>
                     </tr>
                 ";
@@ -2737,8 +2732,7 @@ class SalesInvoiceController extends Controller
 
             $tblStock4 = "
             </table>
-            <div>-------------------------------------------------------</div>
-            <table style=\" font-size:9px; \" width=\" 100% \" border=\"0\">
+            <table style=\" font-size:10px; \" width=\" 100% \" border=\"0\">
             <tr>
                 <td width=\" 35% \" style=\"text-align: left; font-weight:bold;\">" . $items . " Items</td>
                 <td width=\" 50% \" style=\"text-align: right; font-weight:bold;\">Total : " . number_format($sales_invoice['subtotal_amount']) . "</td>
@@ -2815,7 +2809,7 @@ class SalesInvoiceController extends Controller
                 <td width=\"25% \" style=\"text-align: left; \"></td>
                 <td width=\"5% \" style=\"text-align: left; \"></td>
                 <td width=\"20% \" style=\"text-align: left; \"></td>
-                <td width=\"50% \" style=\"text-align: right; \">Semarang" . date('d-m-Y', strtotime($sales_invoice['created_at'])) . "</td>
+                <td width=\"50% \" style=\"text-align: right; \">Semarang ," . date('d-m-Y', strtotime($sales_invoice['created_at'])) . "</td>
                 </tr>
                 ";
             }
@@ -2849,8 +2843,8 @@ class SalesInvoiceController extends Controller
 
             $tblStock5 = "
             </table>
-            <div>-------------------------------------------------------</div>
-            <table style=\" font-size:9px; \" width=\" 100% \" border=\"0\">
+            
+            <table style=\" font-size:10px; \" width=\" 100% \" border=\"0\">
                 <tr>
                     <td width=\" 100% \" style=\"text-align: center;\">Terima Kasih</td>
                 </tr>
